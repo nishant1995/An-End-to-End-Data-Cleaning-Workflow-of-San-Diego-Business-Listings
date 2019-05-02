@@ -1,0 +1,332 @@
+[
+  {
+    "op": "core/column-rename",
+    "description": "Rename column BUSINESS ACCT# to Business_Acc_No",
+    "oldColumnName": "BUSINESS ACCT#",
+    "newColumnName": "Business_Acc_No"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column DBA NAME to Business_Name",
+    "oldColumnName": "DBA NAME",
+    "newColumnName": "Business_Name"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column OWNERSHIP TYPE to Ownership_Type",
+    "oldColumnName": "OWNERSHIP TYPE",
+    "newColumnName": "Ownership_Type"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column ADDRESS to Address",
+    "oldColumnName": "ADDRESS",
+    "newColumnName": "Address"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column CITY to City",
+    "oldColumnName": "CITY",
+    "newColumnName": "City"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column ZIP to Zip",
+    "oldColumnName": "ZIP",
+    "newColumnName": "Zip"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column STATE to State",
+    "oldColumnName": "STATE",
+    "newColumnName": "State"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column BUSINESS PHONE to Phone_No",
+    "oldColumnName": "BUSINESS PHONE",
+    "newColumnName": "Phone_No"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column OWNER NAME to Owner_Name",
+    "oldColumnName": "OWNER NAME",
+    "newColumnName": "Owner_Name"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column CREATION DT to Creation_Date",
+    "oldColumnName": "CREATION DT",
+    "newColumnName": "Creation_Date"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column START DT to Start_Date",
+    "oldColumnName": "START DT",
+    "newColumnName": "Start_Date"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column EXP DT to Exp_Date",
+    "oldColumnName": "EXP DT",
+    "newColumnName": "Exp_Date"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column ACTIVITY DESC to Business_Description",
+    "oldColumnName": "ACTIVITY DESC",
+    "newColumnName": "Business_Description"
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "Ownership_Type",
+          "expression": "value",
+          "columnName": "Ownership_Type",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "OWNERSHIP TYPE",
+                "l": "OWNERSHIP TYPE"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    }
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Business_Acc_No using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Business_Acc_No",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Business_Name using expression value.toTitlecase()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Business_Name",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Address using expression value.toTitlecase()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Address",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column City using expression value.toTitlecase()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "City",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Zip using expression grel:value.replace(/\\-/,'')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Zip",
+    "expression": "grel:value.replace(/\\-/,'')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Zip using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Zip",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Phone_No using expression grel:value.replace(/(\\(|\\)|\\-|\\s)/,'')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Phone_No",
+    "expression": "grel:value.replace(/(\\(|\\)|\\-|\\s)/,'')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Phone_No using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Phone_No",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Owner_Name using expression value.toTitlecase()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Owner_Name",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Creation_Date using expression value.toDate()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Creation_Date",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Creation_Date using expression grel:toString(toDate(value),\"yyyy-MM-dd\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Creation_Date",
+    "expression": "grel:toString(toDate(value),\"yyyy-MM-dd\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Start_Date using expression value.toDate()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Start_Date",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Start_Date using expression grel:toString(toDate(value),\"yyyy-MM-dd\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Start_Date",
+    "expression": "grel:toString(toDate(value),\"yyyy-MM-dd\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Exp_Date using expression value.toDate()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Exp_Date",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Exp_Date using expression grel:toString(toDate(value),\"yyyy-MM-dd\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Exp_Date",
+    "expression": "grel:toString(toDate(value),\"yyyy-MM-dd\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column NAICS using expression value.toNumber()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NAICS",
+    "expression": "value.toNumber()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column Business_Description using expression value.toTitlecase()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "Business_Description",
+    "expression": "value.toTitlecase()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  }
+]
